@@ -83,7 +83,7 @@ NODE_OPTIONS="--require $(pwd)/.pnp.js" node ./server.js
 
 ## PnP `loose` mode
 
-Because the hoisting heuristics aren't standardized and predictable, PnP operating under strict mode will prevent packages to require dependencies that they don't explicitly list (even if one of their other dependencies happens to depend on it). This may cause issues with some packages.
+Because the hoisting heuristics aren't standardized and predictable, PnP operating under strict mode will prevent packages from `require`ing dependencies that they don't explicitly list (even if one of their other dependencies happens to depend on it). This may cause issues with some packages.
 
 To address this problem, Yarn ships with a "loose" mode which will cause the PnP linker to work in tandem with the `node-modules` hoister - we will first generate the list of packages that would have been hoisted to the top-level in a typical `node_modules` install, then remember this list as what we call the "fallback pool".
 
